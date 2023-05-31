@@ -60,7 +60,7 @@ def index():
 
 
 @app.route('/author')
-def team():
+def author():
     """Display the team page."""
     return '''
     <!DOCTYPE html>
@@ -153,64 +153,6 @@ def about():
     
     </html>
     """
-
-
-# @app.route('/gptdemo', methods=['GET', 'POST'])
-# def gptdemo():
-#     ''' handle a get request by sending a form 
-#         and a post request by returning the GPT response
-#     '''
-#     if request.method == 'POST':
-#         prompt = request.form['prompt']
-#         answer = gptAPI.getResponse(prompt)
-#         return f'''
-#         <h1>GPT Demo</h1>
-#         <pre style="bgcolor:yellow">{prompt}</pre>
-#         <hr>
-#         Here is the answer in text mode:
-#         <div style="border:thin solid black">{answer}</div>
-#         Here is the answer in "pre" mode:
-#         <pre style="border:thin solid black">{answer}</pre>
-#         <a href={url_for('gptdemo')}> make another query</a>
-#         '''
-#     else:
-#         return '''
-
-#             <!DOCTYPE html>
-
-#             <head>
-#                 <style>
-#                     #page {
-#                         width: 80vw;
-#                         height: 80vh;
-#                         border: 3px solid rgba(66, 245, 144, 0.837);
-#                         text-align: center;
-#                         margin: auto;
-#                         text-shadow: 2px 2px 5px rgba(75, 176, 47, 0.866);
-#                     }
-
-#                     #submit {
-#                         font-size: 24;
-#                     }
-#                 </style>
-#             </head>
-
-#             <body>
-#                 <div id="page">
-#                     <div id="header">
-#                         <h1>GPT Demo App</h1>
-#                     </div>
-#                     <div id="form">
-#                         <form method="post">
-#                             <textarea name="prompt" placeholder="Enter your query here"></textarea>
-#                         </form>
-#                     </div>
-#                     <div id="submit">
-#                         <input type=submit value="get response">
-#                     </div>
-#                 </div>
-#             </body>
-#         '''
 
 
 @app.route('/generator', methods=['GET', 'POST'])
